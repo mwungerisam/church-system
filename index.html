@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8">
+  <title>Rwanda Christian Revival Church - Ituro ry'Itorero</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .church-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1C39BF;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .church-logo {
+      width: 30px;
+      height: 30px;
+    }
+
+    .card h1 {
+      color: #1C39BF;
+      margin: 15px 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #1C39BF;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #1C39BF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #142F8D;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    /* Success Message Styles */
+    .success-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #4CAF50;
+      color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-align: center;
+      max-width: 90%;
+      animation: fadeIn 0.5s ease-out;
+      border-left: 5px solid #388E3C;
+    }
+
+    .success-message i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: block;
+      color: white;
+    }
+
+    .success-message p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    .fade-out {
+      animation: fadeOut 0.5s ease-out forwards;
+    }
+
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay" id="overlay"></div>
+  
+  <div class="card">
+    <div class="church-name">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48c3R5bGU+LnN0MHtmaWxsOiMxQzM5QkY7fS5zdDF7ZmlsbDojRjRCMzM2O30uc3Qye2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUwLDEwMGMwLTI3LjYtMjIuNC01MC01MC01MHMtNTAsMjIuNC01MCw1MHYwYzAsMjcuNiwyMi40LDUwLDUwLDUwUzE1MCwxMjcuNiwxNTAsMTAwTDE1MCwxMDB6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTEwMCw1MGMtMjcuNiwwLTUwLDIyLjQtNTAsNTB2MGMwLDI3LjYsMjIuNCw1MCw1MCw1MHM1MC0yMi40LDUwLTUwVjEwMEMxNTAsNzIuNCwxMjcuNiw1MCwxMDAsNTB6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTEwMCw2NWMxOS4zLDAsMzUsMTUuNywzNSwzNUg2NUM2NSw4MC43LDgwLjcsNjUsMTAwLDY1eiIvPjwvc3ZnPg==" alt="Church Logo" class="church-logo">
+      Rwanda Christian Revival Church – Runyinya
+    </div>
+
+    <h1>Ituro ry'Ikoranabuhanga</h1>
+
+    <p>
+      Andika amafaranga ushaka gutanga nk'ituro, uhite wemeza ukoresheje MTN Mobile Money yawe.
+    </p>
+
+    <input
+      type="number"
+      id="amount"
+      placeholder="Andika amafaranga (RWF)"
+      min="100"
+    />
+
+    <button onclick="tangaIturo()">
+      <i class="fas fa-paper-plane"></i> Tanga ituro
+    </button>
+
+    <div class="footer">
+      Kwishyura bikorwa ukoresheje MTN MoMo
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div class="success-message" id="successMessage">
+    <i class="fas fa-check-circle"></i>
+    <p>Urakoze gutanga ituro,<br>Imana iguhe umugisha</p>
+  </div>
+
+  <!-- MTN MoMo Widget -->
+  <script src="https://momodeveloper.mtn.com/assets/js/momo-widget.js"></script>
+
+  <script>
+    function showSuccessMessage() {
+      const successMsg = document.getElementById('successMessage');
+      const overlay = document.getElementById('overlay');
+      
+      // Show message and overlay
+      successMsg.style.display = 'block';
+      overlay.style.display = 'block';
+      
+      // Hide after 5 seconds
+      setTimeout(() => {
+        successMsg.classList.add('fade-out');
+        overlay.style.opacity = '0';
+        
+        // Reset after animation
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+          successMsg.classList.remove('fade-out');
+          overlay.style.display = 'none';
+          overlay.style.opacity = '1';
+        }, 500);
+      }, 5000);
+    }
+
+    function tangaIturo() {
+      const amount = document.getElementById("amount").value;
+
+      if (!amount || amount < 100) {
+        alert("Nyamuneka andika amafaranga yemewe (byibura 100 RWF).");
+        return;
+      }
+
+      // Show loading state
+      const btn = document.querySelector('button');
+      const btnText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Itegereza...';
+      btn.disabled = true;
+
+      // Simulate API call (replace with actual MoMo API call)
+      MomoWidget.checkout({
+        apiKey: "4bc62c0d70b8437ba8a3a73ca1d328df",
+        amount: amount,
+        currency: "RWF",
+        phoneNumber: "0783654015",
+        description: "Ituro - Rwanda Christian Revival Church Runyinya",
+        onSuccess: function() {
+          // Show success message
+          showSuccessMessage();
+          // Reset form
+          document.getElementById('amount').value = '';
+        },
+        onError: function(error) {
+          alert("Hari ikibazo mwongere mugerageze.");
+          console.error('Payment error:', error);
+        },
+        onClose: function() {
+          // Reset button state
+          btn.innerHTML = btnText;
+          btn.disabled = false;
+        }
+      });
+    }
+
+    // Close message when clicking outside
+    document.getElementById('overlay').addEventListener('click', function() {
+      document.getElementById('successMessage').style.display = 'none';
+      this.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
