@@ -1,0 +1,45 @@
+{
+    "name": "ituro-app",
+    "version": "1.0.0",
+    "description": "Ituro ry'Itorero - Rwanda Christian Revival Church",
+    "main": "index.js",
+    "scripts": {
+        "build": "echo 'Building...' && mkdir -p dist && cp -r *.html *.css *.js *.ico netlify dist/",
+        "dev": "netlify dev",
+        "start": "http-server -p 8080",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mwungerisam/church-system.git"
+    },
+    "keywords": [
+        "church",
+        "offering",
+        "rwanda",
+        "momo",
+        "payment"
+    ],
+    "author": "Rwanda Christian Revival Church",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mwungerisam/church-system/issues"
+    },
+    "homepage": "https://github.com/mwungerisam/church-system#readme",
+    "dependencies": {
+        "@capacitor/android": "^8.0.1",
+        "@capacitor/cli": "^8.0.1",
+        "axios": "^1.6.0",
+        "crypto-js": "^4.1.1",
+        "dotenv": "^16.3.1",
+        "http-server": "^14.1.1"
+    },
+    "devDependencies": {
+        "netlify-cli": "^15.0.0"
+    },
+        "@capacitor/core": "^8.0.1"
+    },
+    "devDependencies": {
+        "http-server": "^14.1.1"
+    }
+}

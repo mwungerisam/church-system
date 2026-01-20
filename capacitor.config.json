@@ -1,0 +1,8 @@
+{
+  "appId": "org.rwanda.church",
+  "appName": "Ituro",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
